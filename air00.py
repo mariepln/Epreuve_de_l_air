@@ -18,9 +18,12 @@ def string_to_array (string_to_cut, string_separator):
         
     return array
 
+
 argument = sys.argv[1]
 separator = " \t\n"
 
 result = string_to_array(argument, separator)
 for word in result:
     print(word)
+
+ 

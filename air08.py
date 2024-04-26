@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import sys
+import error_handling
 
 def sorted_fusion(array1, array2):
     new_array = []
@@ -18,6 +19,8 @@ def sorted_fusion(array1, array2):
     new_array.extend(array2[j:])
 
     return new_array
+
+error_handling.check_arguments_less_than_2()
 
 separator = "fusion"
 arguments = sys.argv[1:]  # Exclut le nom du script (premier élément)
@@ -41,19 +44,15 @@ if not array1 or not array2:
         print("error")
         sys.exit(1)
 
-for i in range (len(array1)):
+for i in range (len(array1) - 1):
     if array1[i] > array1[i+1]:
         print("sorted error")
         sys.exit(1)
 
-for j in range (len(array2)):
+for j in range (len(array2) - 1):
     if array2[j] > array2[j+1]:
         print("sorted error")
         sys.exit(1)
-
-if len(arguments) < 2:
-    print("error")
-    sys.exit(1)
 
 result = sorted_fusion(array1, array2)
 result_str = " ".join(map(str, result))

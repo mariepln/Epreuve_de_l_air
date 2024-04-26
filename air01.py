@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import sys
+import error_handling
 
 def string_to_array(string_to_cut, string_separator):
     array = []
@@ -23,8 +24,15 @@ def string_to_array(string_to_cut, string_separator):
     
     return array
 
+error_handling.check_arguments_greather_than_2()
+error_handling.check_arguments_less_than_2()
+
 argument = sys.argv[1]
 separator = sys.argv[2]
+
+if argument.isdigit() or separator.isdigit():
+    print("error : string only")
+    sys.exit(1)
 
 result = string_to_array(argument, separator)
 for word in result:

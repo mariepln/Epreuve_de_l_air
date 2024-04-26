@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import sys
+import error_handling
 
 def sort_with_letter(string_array, string):
     my_new_array = []
@@ -12,6 +13,8 @@ def sort_with_letter(string_array, string):
             my_new_array.append(string_array[i])
 
     return my_new_array
+
+error_handling.check_arguments_less_than_3()
 
 array = sys.argv[1:]
 last_arg = array[-1]

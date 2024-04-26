@@ -11,6 +11,6 @@ else:
             result = file.read()
             print(result)
     except FileNotFoundError:
-        print(f"error : '{file_name}' doesn't exist")
+        print(f"error: '{file_name}' doesn't exist")
 
  

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import sys
+import error_handling
 
 def only_one(string_with_double):
     double = ""
@@ -15,6 +16,8 @@ def only_one(string_with_double):
     string += string_with_double[-1]
 
     return string
+
+error_handling.check_arguments_greather_than_1()
 
 string = sys.argv[1]
 

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import sys
+import error_handling
 
 def sorted_insert(array, new_element):
     new_array = []
@@ -17,8 +18,16 @@ def sorted_insert(array, new_element):
 
     return new_array
 
-my_array = [int(x) for x in sys.argv[1:-1]]
-last_element = int(sys.argv[-1])
+error_handling.check_arguments_less_than_2()
+
+try:
+    my_array = [int(x) for x in sys.argv[1:-1]]
+    last_element = int(sys.argv[-1])
+except ValueError:
+    print("error: integer only")
+    sys.exit(1)
+
+
 
 result = sorted_insert(my_array, last_element)
 
